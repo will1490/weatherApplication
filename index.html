@@ -10,7 +10,10 @@
     <link rel="manifest" href="./favicon/site.webmanifest">
     <link rel="stylesheet" type="text/css" media="all" href="./base.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./style.css">
-    <script type="text/javascript" defer src="./script.js"></script> 
+    <script type="module" defer src="./script.js"></script> 
+    <script type="module" defer src="./getWeatherData.js"></script>
+    <script type="module" defer src="./getCityPicture.js"></script>
+    <script type="module" defer src="./displayResult.js"></script> 
     <title>The Weather Application</title>
 </head>
 <body>
@@ -18,16 +21,16 @@
         <h1>Weather App</h1>
         <div class="time"></div>
     </header>
-        <container>
-            <form>
-                <label for="city">Choose a city</label><br>
-                <input type="text" id="city"><br><br>
-                <input type="submit" value="Send">
-
-            </form>
-            <div id="resultCity"></div>
-        </container>
-    
-    
+    <container>
+        <form id="formCity">
+            <label for="city">Choose a city</label><br>
+            <input type="text" class="city-input" required><br><br>
+            <input type="text" class="city-input" required><br><br>
+            <input type="text" class="city-input" required><br><br>
+            <input type="submit" value="Send">
+        </form>
+        <div id="displayResultContainer"></div>
+        <div id="displayCityPictureContainer"></div>
+    </container>
 </body>
 </html>
