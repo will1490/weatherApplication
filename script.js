@@ -27,5 +27,10 @@ form.addEventListener('submit', function(event) {
         displayWeatherAndPhoto(city, weatherData, cityPhotoUrl);
         localStorage.setItem(city, city);
       });
+
+      // Réinitialisation des champs de saisie après soumission
+      for (const input of cityInputs) {
+        input.value = '';
+      }
     });
 });

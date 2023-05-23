@@ -1,4 +1,28 @@
 img {
-    width: 500px;
-    height: 500px;
+    width: 350px;
+    height: 350px;
+}
+header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+h1 {
+    font-size: 40px;
+    color:aliceblue;
+    font-weight: 400;
+}
+h2 {
+    color:indigo;
+    text-decoration: underline;
+}
+body {
+    background-image: url(./images/ciel.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }

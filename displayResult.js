@@ -10,15 +10,17 @@ export function displayWeatherAndPhoto(city, weatherData, photoUrl) {
 
   weatherData.forEach(day => {
     const dayElement = document.createElement('div');
-    dayElement.textContent = `Date: ${day.date}, Weather: ${day.weather}, Min Temp: ${day.minTemp}, Max Temp: ${day.maxTemp}, Temp: ${day.temperature}`;
+    dayElement.textContent = `Date: ${day.date}, Weather: ${day.weather}, Min Temp: ${day.minTemp}, Max Temp: ${day.maxTemp}`;
     cityWeatherContainer.appendChild(dayElement);
   });
-
-  weatherContainer.appendChild(cityWeatherContainer);
 
   const photoContainer = document.getElementById('displayCityPictureContainer');
   const cityPhoto = document.createElement('img');
   cityPhoto.src = photoUrl;
   cityPhoto.alt = `Photo of ${city}`;
-  photoContainer.appendChild(cityPhoto);
+  cityPhoto.className = 'city-photo';
+
+  cityWeatherContainer.appendChild(cityPhoto);
+
+  weatherContainer.appendChild(cityWeatherContainer);
 }
