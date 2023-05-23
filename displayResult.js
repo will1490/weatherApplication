@@ -10,7 +10,7 @@ export function displayWeatherAndPhoto(city, weatherData, photoUrl) {
 
   weatherData.forEach(day => {
     const dayElement = document.createElement('div');
-    dayElement.textContent = `Date: ${day.date}, Weather: ${day.weather}, Min Temp: ${day.minTemp}, Max Temp: ${day.maxTemp}`;
+    dayElement.textContent = `Date: ${day.date}, Weather: ${day.weather}, Min Temp: ${day.minTemp}, Max Temp: ${day.maxTemp}, Temp: ${day.temperature}`;
     cityWeatherContainer.appendChild(dayElement);
   });
 
