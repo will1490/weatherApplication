@@ -32,5 +32,38 @@ form.addEventListener('submit', function(event) {
       for (const input of cityInputs) {
         input.value = '';
       }
+
+      // Graphique
+      const graphElement = document.getElementById('temperatureGraph');
+
+      results.forEach(({ city, weatherData }) => {
+        // Retrieve the temperature data from the weatherData object
+        const temperatureData = weatherData.map(day => ((day.temperature-273.15).toFixed(1)));
+
+        const temperatureGraph = new Chart(graphElement, {
+          type: 'line',
+          data: {
+            labels: weatherData.map(day => day.date),
+            datasets: [
+              {
+                label: `Temperature (${city})`,
+                data: temperatureData,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+      });
     });
 });
+

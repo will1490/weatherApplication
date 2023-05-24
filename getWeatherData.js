@@ -21,7 +21,7 @@ export async function getWeatherData(city) {
       const minTemp = item.main.temp_min;
       const maxTemp = item.main.temp_max;
       const temperature = item.main.temp;
-      weatherData.push({ date: formattedDate, weather, minTemp, maxTemp, temperature });
+      weatherData.push({date: formattedDate, weather, minTemp, maxTemp, temperature });
       uniqueDates.add(formattedDate);
     }
 

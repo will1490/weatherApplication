@@ -10,10 +10,11 @@
     <link rel="manifest" href="./favicon/site.webmanifest">
     <link rel="stylesheet" type="text/css" media="all" href="./base.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./style.css">
-    <script type="module" defer src="./script.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/Chart.min.js"></script>
     <script type="module" defer src="./getWeatherData.js"></script>
     <script type="module" defer src="./getCityPicture.js"></script>
-    <script type="module" defer src="./displayResult.js"></script> 
+    <script type="module" defer src="./displayResult.js"></script>
+    <script type="module" defer src="./script.js"></script> 
     <title>The Weather Application</title>
 </head>
 <body>
@@ -29,8 +30,13 @@
             <input type="text" class="city-input" required><br><br>
             <input type="submit" value="Send">
         </form>
-        <div id="displayResultContainer"></div>
+        <div id="graphContainer">
+            <canvas id="temperatureGraph" class="chartjs-render-monitor"></canvas>
+        </div>
+          
         <div id="displayCityPictureContainer"></div>
+        <div id="displayResultContainer"></div>
+        
     </div>
 </body>
 </html>
