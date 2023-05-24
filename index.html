@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" media="all" href="./base.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/Chart.min.js"></script>
+    <script type="module" defer src="./autoComplete.js"></script>
     <script type="module" defer src="./getWeatherData.js"></script>
     <script type="module" defer src="./getCityPicture.js"></script>
     <script type="module" defer src="./displayResult.js"></script>
@@ -25,10 +26,10 @@
     <div class="container">
         <form id="formCity">
             <label for="city">Choose a city</label><br>
-            <input type="text" class="city-input" required><br><br>
-            <input type="text" class="city-input" required><br><br>
-            <input type="text" class="city-input" required><br><br>
-            <input type="submit" value="Send">
+            <input type="text" class="city-input" required>
+            <div class="autoComplete"></div>
+
+            <input type="submit" value="Add">
         </form>
         <div id="graphContainer">
             <canvas id="temperatureGraph" class="chartjs-render-monitor"></canvas>
